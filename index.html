@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Le ciné-club du w3c</title>
+  <meta name="description" content="Le ciné-club du w3c" />
+  <meta property="og:title" content="Le ciné-club du w3c" />
+  <meta property="og:description" content="Les recommandations cinéma du w3c" />
+  <meta property="og:image" content="https://w3cdotorg.github.io/cine-club/images/profile_picture_memoji_clean.png" />
+  <meta property="og:image:alt" content="Les recommandations cinéma du w3c" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:url" content="https://w3cdotorg.github.io/cine-club/" />
+  <link rel="canonical" href="https://w3cdotorg.github.io/cine-club/" />
+  <link rel="icon" href="https://w3cdotorg.github.io/cine-club/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://w3cdotorg.github.io/cine-club/apple-icon.png">
+  <meta name="theme-color" content="#000000" />
+  <style>
+    :root {
+      --active-brightness: 0.85;
+      --border-radius: 5px;
+      --box-shadow: 2px 2px 10px;
+      --color: #118bee;
+      --color-accent: #118bee15;
+      --color-bg: #fff;
+      --color-bg-secondary: #e9e9e9;
+      --color-link: #118bee;
+      --color-secondary: #920de9;
+      --color-secondary-accent: #920de90b;
+      --color-shadow: #f4f4f4;
+      --color-table: #118bee;
+      --color-text: #000;
+      --color-text-secondary: #999;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      --hover-brightness: 1.2;
+      --justify-important: center;
+      --justify-normal: left;
+      --line-height: 1.5;
+      --width-card: 285px;
+      --width-card-medium: 460px;
+      --width-card-wide: 800px;
+      --width-content: 1080px
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color: #0097fc;
+        --color-accent: #0097fc4f;
+        --color-bg: #333;
+        --color-bg-secondary: #555;
+        --color-link: #0097fc;
+        --color-secondary: #e20de9;
+        --color-secondary-accent: #e20de94f;
+        --color-shadow: #bbbbbb20;
+        --color-table: #0097fc;
+        --color-text: #f7f7f7;
+        --color-text-secondary: #aaa
+      }
+    }
+
+    article aside {
+      background: var(--color-secondary-accent);
+      border-left: 4px solid var(--color-secondary);
+      padding: 0.01rem 0.8rem
+    }
+
+    body {
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-family);
+      line-height: var(--line-height);
+      margin: 0;
+      overflow-x: hidden;
+      padding: 0
+    }
+
+    footer,
+    header,
+    main {
+      margin: 0 auto;
+      max-width: var(--width-content);
+      padding: 3rem 1rem
+    }
+
+    hr {
+      background-color: var(--color-bg-secondary);
+      border: none;
+      height: 1px;
+      margin: 4rem 0;
+      width: 100%
+    }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: var(--justify-important)
+    }
+
+    article img,
+    section img {
+      max-width: 100%
+    }
+
+    section pre {
+      overflow: auto
+    }
+
+    section aside {
+      border: 1px solid var(--color-bg-secondary);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow) var(--color-shadow);
+      margin: 1rem;
+      padding: 1.25rem;
+      width: var(--width-card)
+    }
+
+    section aside:hover {
+      box-shadow: var(--box-shadow) var(--color-bg-secondary)
+    }
+
+    [hidden] {
+      display: none
+    }
+
+    article header,
+    div header,
+    main header {
+      padding-top: 0
+    }
+
+    header {
+      text-align: var(--justify-important)
+    }
+
+    header a b,
+    header a em,
+    header a i,
+    header a strong {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem
+    }
+
+    header nav img {
+      margin: 1rem 0
+    }
+
+    section header {
+      padding-top: 0;
+      width: 100%
+    }
+
+    nav {
+      align-items: center;
+      display: flex;
+      font-weight: bold;
+      justify-content: space-between;
+      margin-bottom: 7rem
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 0.5rem;
+      position: relative;
+      text-align: left
+    }
+
+    nav ul li:hover ul {
+      display: block
+    }
+
+    nav ul li ul {
+      background: var(--color-bg);
+      border: 1px solid var(--color-bg-secondary);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow) var(--color-shadow);
+      display: none;
+      height: auto;
+      left: -2px;
+      padding: 0.5rem 1rem;
+      position: absolute;
+      top: 1.7rem;
+      white-space: nowrap;
+      width: auto;
+      z-index: 1
+    }
+
+    nav ul li ul::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -0.5rem;
+      height: 0.5rem
+    }
+
+    nav ul li ul li,
+    nav ul li ul li a {
+      display: block
+    }
+
+    code,
+    samp {
+      background-color: var(--color-accent);
+      border-radius: var(--border-radius);
+      color: var(--color-text);
+      display: inline-block;
+      margin: 0 0.1rem;
+      padding: 0 0.5rem
+    }
+
+    details {
+      margin: 1.3rem 0
+    }
+
+    details summary {
+      font-weight: bold;
+      cursor: pointer
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      line-height: var(--line-height)
+    }
+
+    mark {
+      padding: 0.1rem
+    }
+
+    ol li,
+    ul li {
+      padding: 0.2rem 0
+    }
+
+    p {
+      margin: 0.75rem 0;
+      padding: 0;
+      width: 100%
+    }
+
+    pre {
+      margin: 1rem 0;
+      max-width: var(--width-card-wide);
+      padding: 1rem 0
+    }
+
+    pre code,
+    pre samp {
+      display: block;
+      max-width: var(--width-card-wide);
+      padding: 0.5rem 2rem;
+      white-space: pre-wrap
+    }
+
+    small {
+      color: var(--color-text-secondary)
+    }
+
+    sup {
+      background-color: var(--color-secondary);
+      border-radius: var(--border-radius);
+      color: var(--color-bg);
+      font-size: xx-small;
+      font-weight: bold;
+      margin: 0.2rem;
+      padding: 0.2rem 0.3rem;
+      position: relative;
+      top: -2px
+    }
+
+    a {
+      color: var(--color-link);
+      display: inline-block;
+      font-weight: bold;
+      text-decoration: none
+    }
+
+    a:active {
+      filter: brightness(var(--active-brightness));
+      text-decoration: underline
+    }
+
+    a:hover {
+      filter: brightness(var(--hover-brightness));
+      text-decoration: underline
+    }
+
+    a b,
+    a em,
+    a i,
+    a strong,
+    button {
+      border-radius: var(--border-radius);
+      display: inline-block;
+      font-size: medium;
+      font-weight: bold;
+      line-height: var(--line-height);
+      margin: 0.5rem 0;
+      padding: 1rem 2rem
+    }
+
+    button {
+      font-family: var(--font-family)
+    }
+
+    button:active {
+      filter: brightness(var(--active-brightness))
+    }
+
+    button:hover {
+      cursor: pointer;
+      filter: brightness(var(--hover-brightness))
+    }
+
+    a b,
+    a strong,
+    button {
+      background-color: var(--color-link);
+      border: 2px solid var(--color-link);
+      color: var(--color-bg)
+    }
+
+    a em,
+    a i {
+      border: 2px solid var(--color-link);
+      border-radius: var(--border-radius);
+      color: var(--color-link);
+      display: inline-block;
+      padding: 1rem 2rem
+    }
+
+    article aside a {
+      color: var(--color-secondary)
+    }
+
+    figure {
+      margin: 0;
+      padding: 0
+    }
+
+    figure img {
+      max-width: 100%
+    }
+
+    figure figcaption {
+      color: var(--color-text-secondary)
+    }
+
+    button:disabled,
+    input:disabled {
+      background: var(--color-bg-secondary);
+      border-color: var(--color-bg-secondary);
+      color: var(--color-text-secondary);
+      cursor: not-allowed
+    }
+
+    button[disabled]:hover {
+      filter: none
+    }
+
+    form {
+      border: 1px solid var(--color-bg-secondary);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow) var(--color-shadow);
+      display: block;
+      max-width: var(--width-card-wide);
+      min-width: var(--width-card);
+      padding: 1.5rem;
+      text-align: var(--justify-normal)
+    }
+
+    form header {
+      margin: 1.5rem 0;
+      padding: 1.5rem 0
+    }
+
+    input,
+    label,
+    select,
+    textarea {
+      display: block;
+      font-size: inherit;
+      max-width: var(--width-card-wide)
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      display: inline-block
+    }
+
+    input[type="checkbox"]+label,
+    input[type="radio"]+label {
+      display: inline-block;
+      font-weight: normal;
+      position: relative;
+      top: 1px
+    }
+
+    input,
+    select,
+    textarea {
+      border: 1px solid var(--color-bg-secondary);
+      border-radius: var(--border-radius);
+      margin-bottom: 1rem;
+      padding: 0.4rem 0.8rem
+    }
+
+    input[readonly],
+    textarea[readonly] {
+      background-color: var(--color-bg-secondary)
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 0.2rem
+    }
+
+    table {
+      border: 1px solid var(--color-bg-secondary);
+      border-radius: var(--border-radius);
+      border-spacing: 0;
+      display: inline-block;
+      max-width: 100%;
+      overflow-x: auto;
+      padding: 0;
+      white-space: nowrap
+    }
+
+    table td,
+    table th,
+    table tr {
+      padding: 0.4rem 0.8rem;
+      text-align: var(--justify-important)
+    }
+
+    table thead {
+      background-color: var(--color-table);
+      border-collapse: collapse;
+      border-radius: var(--border-radius);
+      color: var(--color-bg);
+      margin: 0;
+      padding: 0
+    }
+
+    table thead th:first-child {
+      border-top-left-radius: var(--border-radius)
+    }
+
+    table thead th:last-child {
+      border-top-right-radius: var(--border-radius)
+    }
+
+    table thead th:first-child,
+    table tr td:first-child {
+      text-align: var(--justify-normal)
+    }
+
+    table tr:nth-child(even) {
+      background-color: var(--color-accent)
+    }
+
+    blockquote {
+      display: block;
+      font-size: x-large;
+      line-height: var(--line-height);
+      margin: 1rem auto;
+      max-width: var(--width-card-medium);
+      padding: 1.5rem 1rem;
+      text-align: var(--justify-important)
+    }
+
+    blockquote footer {
+      color: var(--color-text-secondary);
+      display: block;
+      font-size: small;
+      line-height: var(--line-height);
+      padding: 1.5rem 0
+    }
+
+    :root {
+      --step--2: clamp(0.63rem, calc(0.82rem + -0.28vw), 0.77rem);
+      --step--1: clamp(0.82rem, calc(0.80rem + 0.12vw), 0.88rem);
+      --step-0: clamp(0.88rem, calc(0.73rem + 0.73vw), 1.25rem);
+      --step-1: clamp(0.93rem, calc(0.61rem + 1.63vw), 1.77rem);
+      --step-2: clamp(1.00rem, calc(0.41rem + 2.93vw), 2.50rem);
+      --step-3: clamp(1.06rem, calc(0.10rem + 4.82vw), 3.53rem);
+      --step-4: clamp(1.13rem, calc(-0.37rem + 7.54vw), 5.00rem);
+      --step-5: clamp(1.21rem, calc(-1.08rem + 11.43vw), 7.07rem);
+    }
+
+    h1 {
+      font-size: var(--step-3);
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: var(--step-2);
+
+    }
+
+    h3 {
+      font-size: var(--step-1);
+
+    }
+
+    h4 {
+      font-size: var(--step-0);
+    }
+
+    body {
+      font-size: var(--step--1);
+      color: var(--color-text);
+      font-family: monospace;
+    }
+
+    header {
+      max-width: 1440px;
+      margin: auto;
+      text-align: center;
+    }
+
+    section {
+      display: grid;
+      grid-template-columns: 1fr 11fr;
+      gap: 1rem;
+    }
+
+    .movies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-rows: 1fr auto auto auto;
+      gap: 1rem;
+    }
+
+    article {
+      border: 4px solid var(--color-text);
+      display: grid;
+      padding: 1rem;
+      grid-row: auto / span 4;
+      grid-template-rows: subgrid;
+    }
+
+    article h3 {
+      margin: 0;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    article img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+      aspect-ratio: 2/3;
+      max-height: 400px;
+    }
+
+    main {
+      max-width: unset;
+      margin: auto;
+    }
+
+    nav {
+      justify-content: center;
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--color-text);
+      text-decoration: underline;
+    }
+
+    .flow>*+* {
+      margin-top: 1rem;
+    }
+
+    .flow-big>*+* {
+      margin-top: 5rem;
+    }
+
+    .moustache {
+      width: calc(8ch - 8px);
+      border-radius: 50%;
+      border: 4px solid var(--color-text);
+      filter: grayscale(100%) contrast(1.5);
+    }
+
+    .avatar {
+      filter: grayscale(1) contrast(2);
+      height: 200px;
+    }
+
+    .stick {
+      position: sticky;
+      top: 1rem;
+      text-align: center;
+    }
+
+    @media (max-width: 790px) {
+      section {
+        grid-template-columns: 1fr;
+      }
+
+      article {
+        max-width: unset;
+        grid-template-columns: 1fr;
+      }
+
+      article img {
+        max-height: 500px;
+      }
+    }
+
+    .gold,
+    .gold a {
+      background: #ffcc33;
+      color: black;
+      border: 4px solid #ffcc33;
+    }
+
+    .silver,
+    .silver a {
+      background: silver;
+      color: black;
+      border: 4px solid silver;
+    }
+
+    .bronze,
+    .bronze a {
+      background: #cd7f32;
+      border: 4px solid #cd7f32;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img class="avatar" src="https://w3cdotorg.github.io/cine-club/images/profile_picture_memoji_clean.png" alt="Avatar w3c">
+    <h1>Le ciné-club du w3c</h1>
+    <p>Les recommandations ciné de <a href="https://twitter.com/w3corg">w3c</a>. Enfin, ce que j'ai regardé quoi.</p>
+    <nav>
+      <ul><li><a href="#2026">2026</a></li><li><a href="#2025">2025</a></li><li><a href="#2024">2024</a></li><li><a href="#2023">2023</a></li></ul>
+    </nav>
+  </header>
+  <main class="flow-big">
+
+    <section>
+      <div>
+        <div class="stick"><img class="moustache" src="images/2026.png" aria-hidden="true" /><h2 id=2026>2026</h2></div>
+      </div>
+      <div class="movies">
+        <article class="flow " id="tt14205554">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNTBiYWJlMjQtOTIyMy00NTY4LWFhOWItOWZhNzc3NGMyMjc2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="KPop Demon Hunters" />
+          <h3>KPop Demon Hunters</h3>
+          <p>KPop Demon Hunters: Directed by Chris Appelhans, Maggie Kang. With Arden Cho, May Hong, Ji-young Yoo, Ahn Hyo-seop. A world-renowned K-Pop girl group balance their lives in the spotlight with their secret identities as demon hunters.</p>
+          <a href="https://www.imdb.com/title/tt14205554">IMDB</a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <div class="stick"><img class="moustache" src="images/2025.png" aria-hidden="true" /><h2 id=2025>2025</h2></div>
+      </div>
+      <div class="movies">
+        <article class="flow " id="tt0211286">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOGQ5YWRkYzYtZGNiZS00NDIyLTgyY2UtOWE5ZDkxZTM4YzlmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Log" />
+          <h3>The Log</h3>
+          <p>The Log: Directed by Danièle Thompson. With Sabine Azéma, Emmanuelle Béart, Charlotte Gainsbourg, Claude Rich. Christmas, family, and infidelity. Yvette's husband has died, and her grown daughters join her at the grave: Sonia, wealthy, bourgeois, and generous; Louba, living with their dad Stanislas, singing at a Russian restaurant, penniless, the mistress for the past 12 years of a man who will never leave his wife; Milla, the youngest, acerbic, lonesome. Christmas was when they learned their parents were divorcing 25 years ago. Over the next few days, yuletide depression, Louba's pregnancy, Sonia's crumbling marriage, Stanislas's overtures to Yvette, and Milla's attraction to the man who's her father's rent-free lodger lead each one to re-examine self, family, and hopes. Is renewal possible?</p>
+          <a href="https://www.imdb.com/title/tt0211286">IMDB</a>
+        </article>
+        <article class="flow " id="tt5796516">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZTI2NWQwYzUtMTFkNC00MDViLWJkMjEtMjdiMjE1ZjJlODFjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Problemos" />
+          <h3>Problemos</h3>
+          <p>Problemos: Directed by Eric Judor. With Eric Judor, Blanche Gardin, Youssef Hajdi, Michel Nabokoff. When a pandemic strikes the world, Victor and his family get stuck within a hippie community.</p>
+          <a href="https://www.imdb.com/title/tt5796516">IMDB</a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <div class="stick"><img class="moustache" src="images/2024.png" aria-hidden="true" /><h2 id=2024>2024</h2></div>
+      </div>
+      <div class="movies">
+        <article class="flow " id="tt6791350">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOTJhOTMxMmItZmE0Ny00MDc3LWEzOGEtOGFkMzY4MWYyZDQ0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Guardians of the Galaxy Vol. 3" />
+          <h3>Guardians of the Galaxy Vol. 3</h3>
+          <p>Guardians of the Galaxy Vol. 3: Directed by James Gunn. With Chris Pratt, Chukwudi Iwuji, Bradley Cooper, Pom Klementieff. Still reeling from the loss of Gamora, Peter Quill rallies his team to defend the universe and one of their own - a mission that could mean the end of the Guardians if not successful.</p>
+          <a href="https://www.imdb.com/title/tt6791350">IMDB</a>
+        </article>
+        <article class="flow " id="tt13964390">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMDM5ODBiN2ItOTk4Yi00NzgyLWE2YTktYzhjYTc2ODE4ZTE4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Under Paris" />
+          <h3>Under Paris</h3>
+          <p>Under Paris: Directed by Xavier Gens. With Bérénice Bejo, Nassim Lyes, Léa Léviant, Sandra Parfait. To save Paris from a bloodbath, a grieving scientist is forced to face her tragic past when a giant shark appears in the Seine.</p>
+          <a href="https://www.imdb.com/title/tt13964390">IMDB</a>
+        </article>
+        <article class="flow " id="tt8847712">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTU1YmNkZWYtYmExNC00YWE1LTk2NWEtMTQ2ODhmYTA5MmZiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The French Dispatch" />
+          <h3>The French Dispatch</h3>
+          <p>The French Dispatch: Directed by Wes Anderson. With Benicio Del Toro, Adrien Brody, Tilda Swinton, Léa Seydoux. A collection of stories published in "The French Dispatch Magazine" comes to life in a fictional twentieth century French city.</p>
+          <a href="https://www.imdb.com/title/tt8847712">IMDB</a>
+        </article>
+        <article class="flow " id="tt12637874">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYzE1MTZmY2ItMTgxNi00OGU5LTk4NTItMmY2ODFhYzhjZjRkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Fallout" />
+          <h3>Fallout</h3>
+          <p>Fallout: Created by Geneva Robertson-Dworet, Graham Wagner. With Ella Purnell, Aaron Moten, Walton Goggins, Moises Arias. In a future, post-apocalyptic Los Angeles brought about by nuclear decimation, citizens must live in underground bunkers to protect themselves from radiation, mutants and bandits.</p>
+          <a href="https://www.imdb.com/title/tt12637874">IMDB</a>
+        </article>
+        <article class="flow " id="tt14502758">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMzZkMGE1MjItYjhmNi00ZjFjLWFiYmUtNDY0MzA3MzMzODE5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Renegade Nell" />
+          <h3>Renegade Nell</h3>
+          <p>Renegade Nell: Created by Sally Wainwright. With Louisa Harland, Frank Dillane, Alice Kremelberg, Enyi Okoronkwo. A quick-witted and courageous young woman framed for murder unexpectedly becomes the most notorious outlaw in 18th-century England. When a magical spirit called Billy appears, Nell realises her destiny is bigger than she ever imagined.</p>
+          <a href="https://www.imdb.com/title/tt14502758">IMDB</a>
+        </article>
+        <article class="flow " id="tt2788316">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZmJkMDRjYzEtMWI3Ny00OWE3LWJlNTItMGQ1MTQzMzc3NDY5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Shōgun" />
+          <h3>Shōgun</h3>
+          <p>Shōgun: With Cosmo Jarvis, Hiroyuki Sanada, Anna Sawai, Tadanobu Asano. When a mysterious European ship is found marooned in a nearby Japanese fishing village, Lord Yoshii Toranaga discovers secrets that could tip the scales of power and devastate his enemies.</p>
+          <a href="https://www.imdb.com/title/tt2788316">IMDB</a>
+        </article>
+        <article class="flow " id="tt0070047">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZjg3YjE4ZjAtYTdmYS00ZTBkLWE1ZjgtNzAzODUwNzRiYjlmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Exorcist" />
+          <h3>The Exorcist</h3>
+          <p>The Exorcist: Directed by William Friedkin. With Ellen Burstyn, Max von Sydow, Linda Blair, Lee J. Cobb. When a mysterious entity possesses a young girl, her mother seeks the help of two Catholic priests to save her life.</p>
+          <a href="https://www.imdb.com/title/tt0070047">IMDB</a>
+        </article>
+        <article class="flow " id="tt0073864">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZWUzNzc2MjQtZTYyNC00Yjk5LWFjNGYtYzRkY2UyZTJkN2NiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Old Gun" />
+          <h3>The Old Gun</h3>
+          <p>The Old Gun: Directed by Robert Enrico. With Philippe Noiret, Romy Schneider, Jean Bouise, Joachim Hansen. During World War II, a peaceful French surgeon decides to ruthlessly exterminate an SS squad because of the atrocities they'd just committed in his countryside home and childhood village.</p>
+          <a href="https://www.imdb.com/title/tt0073864">IMDB</a>
+        </article>
+        <article class="flow " id="tt14230388">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZjY2YjYxNjEtNDJkYi00ZmJjLWIwYTEtNjEyZDgzY2M5ZDc3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Asteroid City" />
+          <h3>Asteroid City</h3>
+          <p>Asteroid City: Directed by Wes Anderson. With Jason Schwartzman, Scarlett Johansson, Tom Hanks, Bryan Cranston. World-changing events spectacularly disrupt the annual Asteroid Day celebration in an American desert town.</p>
+          <a href="https://www.imdb.com/title/tt14230388">IMDB</a>
+        </article>
+        <article class="flow " id="tt1001520">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZmRkMTFjNWMtNTVhNS00Y2EwLWJjYTAtMDRiMjA2MDJhOGI1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Last Voyage of the Demeter" />
+          <h3>The Last Voyage of the Demeter</h3>
+          <p>The Last Voyage of the Demeter: Directed by André Øvredal. With Corey Hawkins, Aisling Franciosi, Liam Cunningham, David Dastmalchian. A crew sailing from Varna (Bulgaria) by the Black Sea to England find that they are carrying very dangerous cargo.</p>
+          <a href="https://www.imdb.com/title/tt1001520">IMDB</a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <div class="stick"><img class="moustache" src="images/2023.png" aria-hidden="true" /><h2 id=2023>2023</h2></div>
+      </div>
+      <div class="movies">
+        <article class="flow " id="tt16969708">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZGMyMzI3ZjktM2E5ZS00NmFjLWE5MmUtMTcxYzFkYmQ3YjM0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Scott Pilgrim Takes Off" />
+          <h3>Scott Pilgrim Takes Off</h3>
+          <p>Scott Pilgrim Takes Off: With Michael Cera, Mary Elizabeth Winstead, Satya Bhabha, Kieran Culkin. Scott Pilgrim meets the girl of his dreams, Ramona Flowers, only to find out her seven evil exes stand in the way of their love.</p>
+          <a href="https://www.imdb.com/title/tt16969708">IMDB</a>
+        </article>
+        <article class="flow " id="tt17663992">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZDZkYzk3YTEtYTQ5MS00MzQ5LTg0NjUtOTgzODA5N2EyYTQ1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Scream VI" />
+          <h3>Scream VI</h3>
+          <p>Scream VI: Directed by Matt Bettinelli-Olpin, Tyler Gillett. With Courteney Cox, Melissa Barrera, Jenna Ortega, Jasmin Savoy Brown. After surviving the latest Woodsboro murders, a group of teens move to New York City, hoping for a fresh start, only to find a new killer picking up where the last Ghostface killer left off.</p>
+          <a href="https://www.imdb.com/title/tt17663992">IMDB</a>
+        </article>
+        <article class="flow " id="tt11245972">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BN2NkYTYzOGUtMzk1Yy00YmI0LWIzODEtMjQ0MWU0NWI4ODdlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Scream" />
+          <h3>Scream</h3>
+          <p>Scream: Directed by Matt Bettinelli-Olpin, Tyler Gillett. With Neve Campbell, Courteney Cox, David Arquette, Melissa Barrera. 25 years after the original Woodsboro killings, a new Ghostface begins targeting teens connected to the town's dark past, drawing the final 3 survivors of the first attack back once more.</p>
+          <a href="https://www.imdb.com/title/tt11245972">IMDB</a>
+        </article>
+        <article class="flow " id="tt1262416">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTk5OTcxNTUyNF5BMl5BanBnXkFtZTcwMDczMzE0NA@@._V1_FMjpg_UX1000_.jpg" alt="Scream 4" />
+          <h3>Scream 4</h3>
+          <p>Scream 4: Directed by Wes Craven. With Neve Campbell, Courteney Cox, David Arquette, Lucy Hale. Ten years after the original Woodsboro murders, one of the survivors returns home to promote their new book about surviving trauma, only for a new Ghostface killer to emerge, targeting a new group of teens.</p>
+          <a href="https://www.imdb.com/title/tt1262416">IMDB</a>
+        </article>
+        <article class="flow " id="tt0134084">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMzc4MThjNDItNWIzYy00NjA5LWExMTAtNjAzZGQwZTViN2ZiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Scream 3" />
+          <h3>Scream 3</h3>
+          <p>Scream 3: Directed by Wes Craven. With David Arquette, Neve Campbell, Courteney Cox, Liev Schreiber. In Hollywood, a new Ghostface starts killing the cast of Stab 3, a movie sequel whose previous movies were based on the Woodsboro and Windsor College killings. Forcing the survivors of those previous attacks to confront terror once again.</p>
+          <a href="https://www.imdb.com/title/tt0134084">IMDB</a>
+        </article>
+        <article class="flow " id="tt0120082">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BODE5YWJkMDMtN2ZiNC00MjI5LTkxYTgtOTkyZjUwMjU0YThiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Scream 2" />
+          <h3>Scream 2</h3>
+          <p>Scream 2: Directed by Wes Craven. With Neve Campbell, Courteney Cox, David Arquette, Jada Pinkett Smith. A year after the Woodsboro murders, the survivors try to move on at Windsor College in Ohio-but when a new Ghostface killer starts a campus killing spree, they must face terror all over again.</p>
+          <a href="https://www.imdb.com/title/tt0120082">IMDB</a>
+        </article>
+        <article class="flow " id="tt1136617">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYzU2MTlkMTctNWI3MC00ODUzLTlmYzQtMzZjYjVmMmYwZGU0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Killer" />
+          <h3>The Killer</h3>
+          <p>The Killer: Directed by David Fincher. With Michael Fassbender, Tilda Swinton, Charles Parnell, Arliss Howard. Solitary, cold, methodical and unencumbered by scruples or regrets, a killer waits in the shadows, watching for his next target. Yet, the longer he waits, the more he thinks he's losing his mind, if not his cool.</p>
+          <a href="https://www.imdb.com/title/tt1136617">IMDB</a>
+        </article>
+        <article class="flow " id="tt0117571">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjA2NjU5MTg5OF5BMl5BanBnXkFtZTgwOTkyMzQxMDE@._V1_FMjpg_UX1000_.jpg" alt="Scream" />
+          <h3>Scream</h3>
+          <p>Scream: Directed by Wes Craven. With Neve Campbell, Courteney Cox, David Arquette, Drew Barrymore. In the small town of Woodsboro, California, a masked killer known as Ghostface begins murdering high school students, and a group of friends must use their knowledge of horror movies to unmask the killer.</p>
+          <a href="https://www.imdb.com/title/tt0117571">IMDB</a>
+        </article>
+        <article class="flow " id="tt1788391">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNzM3NzU2NzUzMV5BMl5BanBnXkFtZTcwNjY2OTUxNw@@._V1_FMjpg_UX1000_.jpg" alt="Kill List" />
+          <h3>Kill List</h3>
+          <p>Kill List: Directed by Ben Wheatley. With Neil Maskell, MyAnna Buring, Harry Simpson, Michael Smiley. Nearly a year after a botched job, a hitman takes a new assignment with the promise of a big payoff for three killings. What starts off as an easy task soon unravels, sending the killer into the heart of darkness.</p>
+          <a href="https://www.imdb.com/title/tt1788391">IMDB</a>
+        </article>
+        <article class="flow " id="tt29627241">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZjdlZGNhYmItNWExZS00ZGIwLThmOWUtMmM2NjAwZWFjNDJjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Polar Park" />
+          <h3>Polar Park</h3>
+          <p>Polar Park: Created by Gérald Hustache-Mathieu. With Jean-Paul Rouve, Guillaume Gouix, India Hair, Pierre Lottin. Crime author Rousseau travels to Mouthe. Here, Brother Giacomo is waiting for him, who has important info about Rousseau's deceased mother. But when he arrives, Giacomo has just died. Rousseau decides to investigate.</p>
+          <a href="https://www.imdb.com/title/tt29627241">IMDB</a>
+        </article>
+        <article class="flow " id="tt8772262">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMzQxNzQzOTQwM15BMl5BanBnXkFtZTgwMDQ2NTcwODM@._V1_FMjpg_UX1000_.jpg" alt="Midsommar" />
+          <h3>Midsommar</h3>
+          <p>Midsommar: Directed by Ari Aster. With Florence Pugh, Jack Reynor, Vilhelm Blomgren, William Jackson Harper. A couple travels to Northern Europe to visit a rural hometown's fabled Swedish mid-summer festival. What begins as an idyllic retreat quickly devolves into an increasingly violent and bizarre competition at the hands of a pagan cult.</p>
+          <a href="https://www.imdb.com/title/tt8772262">IMDB</a>
+        </article>
+        <article class="flow " id="tt3291150">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZjgyMmRmM2EtYWY5ZC00ZTllLWJhM2QtMGRlNGEzMWEzYzllXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Expendables 4" />
+          <h3>The Expendables 4</h3>
+          <p>The Expendables 4: Directed by Scott Waugh. With Jason Statham, 50 Cent, Megan Fox, Dolph Lundgren. Armed with every weapon they can get their hands on, the Expendables are the world's last line of defense and the team that gets called when all other options are off the table.</p>
+          <a href="https://www.imdb.com/title/tt3291150">IMDB</a>
+        </article>
+        <article class="flow " id="tt13145534">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZGEyZmJjNzctMmJlYi00NDZiLThjZGYtODAwZTI0ODcyNGUwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Incredible But True" />
+          <h3>Incredible But True</h3>
+          <p>Incredible But True: Directed by Quentin Dupieux. With Alain Chabat, Léa Drucker, Benoît Magimel, Anaïs Demoustier. Alain and Marie moved to the suburb house of their dreams. But the real estate agent warned them: what is in the basement may well change their lives forever.</p>
+          <a href="https://www.imdb.com/title/tt13145534">IMDB</a>
+        </article>
+        <article class="flow " id="tt5537002">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZWY5ZDVjNTUtODI5Yy00MjFhLWEyM2EtYzZjM2VjZTI0MTBjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Killers of the Flower Moon" />
+          <h3>Killers of the Flower Moon</h3>
+          <p>Killers of the Flower Moon: Directed by Martin Scorsese. With Leonardo DiCaprio, Robert De Niro, Lily Gladstone, Jesse Plemons. When oil is discovered in 1920s Oklahoma under Osage Nation land, the Osage people are murdered one by one - until the FBI steps in to unravel the mystery.</p>
+          <a href="https://www.imdb.com/title/tt5537002">IMDB</a>
+        </article>
+        <article class="flow " id="tt0059269">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMmIwZjk1OTAtNDZhOC00ZDM5LWFjYzUtZDFhMDlmZGVkNGI2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="A High Wind in Jamaica" />
+          <h3>A High Wind in Jamaica</h3>
+          <p>A High Wind in Jamaica: Directed by Alexander Mackendrick. With Anthony Quinn, James Coburn, Dennis Price, Lila Kedrova. In 1870, a Jamaican colonial family sends its children to Britain for proper schooling but their ship is taken over by pirates who become fond of the kids.</p>
+          <a href="https://www.imdb.com/title/tt0059269">IMDB</a>
+        </article>
+        <article class="flow " id="tt14317880">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMzA5MTk5MzEtZWQwNy00OGRjLTljMjMtZDEwZGM1NjY1ZWQ2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Final Cut" />
+          <h3>Final Cut</h3>
+          <p>Final Cut: Directed by Michel Hazanavicius. With Romain Duris, Bérénice Bejo, Grégory Gadebois, Finnegan Oldfield. Things go badly for a small film crew shooting a low budget zombie movie when they are attacked by real zombies.</p>
+          <a href="https://www.imdb.com/title/tt14317880">IMDB</a>
+        </article>
+        <article class="flow " id="tt16428256">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BODhkNDhmNzktODFmMC00NDZiLWEzN2UtY2YwYzgzYTVlMWZmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Suzume" />
+          <h3>Suzume</h3>
+          <p>Suzume: Directed by Makoto Shinkai. With Nanoka Hara, Hokuto Matsumura, Eri Fukatsu, Shôta Sometani. A modern action adventure road story where a 17-year-old girl named Suzume helps a mysterious young man close doors from the other side that are releasing disasters all over in Japan.</p>
+          <a href="https://www.imdb.com/title/tt16428256">IMDB</a>
+        </article>
+        <article class="flow " id="tt0041223">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOGRlZDZlMjMtMmI5Ni00NzMzLWFjZjItYjU3MjY4YzJmZWI3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Canadian Pacific" />
+          <h3>Canadian Pacific</h3>
+          <p>Canadian Pacific: Directed by Edwin L. Marin. With Randolph Scott, Jane Wyatt, J. Carrol Naish, Victor Jory. A surveyor for the Canadian Pacific Railroad must fight fur trappers who oppose the building of the railroad by stirring up Indian rebellion.</p>
+          <a href="https://www.imdb.com/title/tt0041223">IMDB</a>
+        </article>
+        <article class="flow " id="tt10954600">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMThkYWY5ZjQtYjJlMS00MDFmLWFkYzEtODEzZjg5YWFmMGY4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Ant-Man and the Wasp: Quantumania" />
+          <h3>Ant-Man and the Wasp: Quantumania</h3>
+          <p>Ant-Man and the Wasp: Quantumania: Directed by Peyton Reed. With Paul Rudd, Evangeline Lilly, Michael Douglas, Michelle Pfeiffer. Scott Lang and Hope Van Dyne are dragged into the Quantum Realm, along with Hope's parents and Scott's daughter Cassie. Together they must find a way to escape, but what secrets is Hope's mother hiding? And who is the mysterious Kang?</p>
+          <a href="https://www.imdb.com/title/tt10954600">IMDB</a>
+        </article>
+        <article class="flow " id="tt13623580">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNjA5ZTdkOWYtNmMzYy00ZmM0LTg3YWYtNDgyODY5OTIxN2RlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Reservation Dogs" />
+          <h3>Reservation Dogs</h3>
+          <p>Reservation Dogs: Created by Sterlin Harjo, Taika Waititi. With D'Pharaoh Woon-A-Tai, Devery Jacobs, Paulina Alexis, Lane Factor. Comedy series about four Native American teenagers growing up on a reservation in eastern Oklahoma.</p>
+          <a href="https://www.imdb.com/title/tt13623580">IMDB</a>
+        </article>
+        <article class="flow " id="tt11426232">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BM2IwZDI2ZDQtMTU5MC00MDY2LWEwOGYtNGU0ZjNkMzkwMmEyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Totally Killer" />
+          <h3>Totally Killer</h3>
+          <p>Totally Killer: Directed by Nahnatchka Khan. With Kiernan Shipka, Olivia Holt, Charlie Gillespie, Lochlyn Munro. When the infamous "Sweet Sixteen Killer" returns 35 years after his first murder spree to claim another victim, 17-year-old Jamie accidentally travels back in time to 1987, determined to stop the killer before he can start.</p>
+          <a href="https://www.imdb.com/title/tt11426232">IMDB</a>
+        </article>
+        <article class="flow " id="tt6486762">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BY2JlMzg0NDktN2FmOC00ZGQwLWI0MDctMDgzZjk0NzMxZWYwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Continental" />
+          <h3>The Continental</h3>
+          <p>The Continental: Created by Greg Coolidge, Shawn Simmons, Kirk Ward. With Mel Gibson, Colin Woodell, Mishel Prada, Hubert Point-Du Jour. In 1970s New York, a young Winston Scott recruits a team to confront a vast conspiracy sparked by his brother's attack on the hotel-for-assassins The Continental.</p>
+          <a href="https://www.imdb.com/title/tt6486762">IMDB</a>
+        </article>
+        <article class="flow " id="tt11909878">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZjIwODI0NjktNDE5My00NjEzLThhOTQtYzVlNTNmN2QzOTNlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Hocus Pocus 2" />
+          <h3>Hocus Pocus 2</h3>
+          <p>Hocus Pocus 2: Directed by Anne Fletcher. With Bette Midler, Sarah Jessica Parker, Kathy Najimy, Whitney Peak. Two young women accidentally bring back the Sanderson Sisters to modern day Salem and must figure out how to stop the child-hungry witches from wreaking havoc on the world.</p>
+          <a href="https://www.imdb.com/title/tt11909878">IMDB</a>
+        </article>
+        <article class="flow " id="tt0070917">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMWU5NmUxMmYtM2QwYS00ODc1LTkxOGItMWY3ZmEzNzJkNGU3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Wicker Man" />
+          <h3>The Wicker Man</h3>
+          <p>The Wicker Man: Directed by Robin Hardy. With Edward Woodward, Christopher Lee, Diane Cilento, Britt Ekland. A puritan police sergeant arrives in a Scottish island village in search of a missing girl, who the pagan locals claim never existed.</p>
+          <a href="https://www.imdb.com/title/tt0070917">IMDB</a>
+        </article>
+        <article class="flow " id="tt0102138">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMDhhZTc0MWUtZmVjOS00YTNkLTk0YzgtNTNlNzY5ZWU4MTMyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="JFK" />
+          <h3>JFK</h3>
+          <p>JFK: Directed by Oliver Stone. With Kevin Costner, Gary Oldman, Jack Lemmon, Sally Kirkland. New Orleans District Attorney Jim Garrison discovers there's more to the Kennedy assassination than the official story.</p>
+          <a href="https://www.imdb.com/title/tt0102138">IMDB</a>
+        </article>
+        <article class="flow " id="tt0061597">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjY3NTU0ZjUtYmRmYi00Y2U2LTgyNDAtMWQyNGMzOWQ5MGJjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="One-Armed Swordsman" />
+          <h3>One-Armed Swordsman</h3>
+          <p>One-Armed Swordsman: Directed by Cheh Chang. With Jimmy Wang Yu, Chiao Chiao, Chung-Hsin Huang, Yin-Tze Pan. A noble swordsman, whose arm had been chopped off, returns to his former teacher to defend him from a villainous gang of rival swordsmen.</p>
+          <a href="https://www.imdb.com/title/tt0061597">IMDB</a>
+        </article>
+        <article class="flow " id="tt0107120">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYWRhOThjM2UtNmRhMi00YzFiLWI4MDYtOGQwNGY0ZjFlOGFkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Hocus Pocus" />
+          <h3>Hocus Pocus</h3>
+          <p>Hocus Pocus: Directed by Kenny Ortega. With Bette Midler, Sarah Jessica Parker, Kathy Najimy, Omri Katz. A teenage boy named Max and his little sister move to Salem, where he struggles to fit in before awakening a trio of diabolical witches that were executed in the 17th century.</p>
+          <a href="https://www.imdb.com/title/tt0107120">IMDB</a>
+        </article>
+        <article class="flow " id="tt0100944">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjI1MDg5NzAyMV5BMl5BanBnXkFtZTgwNzU5Mzk4NjE@._V1_FMjpg_UX1000_.jpg" alt="The Witches" />
+          <h3>The Witches</h3>
+          <p>The Witches: Directed by Nicolas Roeg. With Anjelica Huston, Mai Zetterling, Jasen Fisher, Rowan Atkinson. A young boy stumbles onto a witch convention and must stop them, even after he has been turned into a mouse.</p>
+          <a href="https://www.imdb.com/title/tt0100944">IMDB</a>
+        </article>
+        <article class="flow " id="tt14379088">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNGJiMzdkNzUtNTExZC00ZTZkLTgxMTAtZjMxZWQwZjMzYjE3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Shin Kamen Rider" />
+          <h3>Shin Kamen Rider</h3>
+          <p>Shin Kamen Rider: Directed by Hideaki Anno. With Sôsuke Ikematsu, Minami Hamabe, Tasuku Emoto, Shin'ya Tsukamoto. Hongo Takeshi awakens to discover he has been transformed into a grasshopper-hybrid cyborg. Becoming the Masked Rider, he must fight the mysterious evil organization SHOCKER to protect all of mankind.</p>
+          <a href="https://www.imdb.com/title/tt14379088">IMDB</a>
+        </article>
+        <article class="flow " id="tt0090180">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYjk1ODQ4NTgtNjAyZi00NjMyLTg4MzktOWQ3YTU3N2MxMTdlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="To Live and Die in L.A." />
+          <h3>To Live and Die in L.A.</h3>
+          <p>To Live and Die in L.A.: Directed by William Friedkin. With William Petersen, Willem Dafoe, John Pankow, Debra Feuer. A fearless Secret Service agent will stop at nothing to bring down the counterfeiter who killed his partner.</p>
+          <a href="https://www.imdb.com/title/tt0090180">IMDB</a>
+        </article>
+        <article class="flow " id="tt13938338">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTllNTQzMzktODY3YS00NjRmLTkzNDItNmRiZDMzYWIxNjg1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Woodlands Dark and Days Bewitched: A History of Folk Horror" />
+          <h3>Woodlands Dark and Days Bewitched: A History of Folk Horror</h3>
+          <p>Woodlands Dark and Days Bewitched: A History of Folk Horror: Directed by Kier-La Janisse. With Linda Hayden, Ian Ogilvy, Kevin Kölsch, Sean Hogan. A thorough overview and dissection of the subgenre of 'folk horror, ' with contributions from many of the major creators and clips from cinema all over the world.</p>
+          <a href="https://www.imdb.com/title/tt13938338">IMDB</a>
+        </article>
+        <article class="flow " id="tt4495098">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjA0N2YyNmYtZDk4Ny00ODE2LThmZWQtNGJiMDk0YzhiNzE5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Gran Turismo" />
+          <h3>Gran Turismo</h3>
+          <p>Gran Turismo: Directed by Neill Blomkamp. With David Harbour, Orlando Bloom, Archie Madekwe, Takehiro Hira. Based on the unbelievable, inspiring true story of a team of underdogs - a struggling, working-class gamer, a failed former race car driver, and an idealistic motorsport exec - who risk it all to take on the most elite sport in the world.</p>
+          <a href="https://www.imdb.com/title/tt4495098">IMDB</a>
+        </article>
+        <article class="flow " id="tt0108399">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYzQ5OGMwMDAtMzcyOS00YTA4LWEwM2MtOTA1MDZjZGEyYmI1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="True Romance" />
+          <h3>True Romance</h3>
+          <p>True Romance: Directed by Tony Scott. With Christian Slater, Patricia Arquette, Dennis Hopper, Val Kilmer. In Detroit, a pop-culture enthusiast steals cocaine from his new wife's pimp and tries to sell it in Hollywood, prompting the mobsters who own the drugs to pursue the couple.</p>
+          <a href="https://www.imdb.com/title/tt0108399">IMDB</a>
+        </article>
+        <article class="flow " id="tt0120780">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BM2U3OGQ0NTMtNmQxYS00MmRiLTg2OTctZDI3ZjNjZjM5N2NlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Out of Sight" />
+          <h3>Out of Sight</h3>
+          <p>Out of Sight: Directed by Steven Soderbergh. With George Clooney, Jennifer Lopez, Ving Rhames, Jim Robinson. A career bank robber breaks out of jail, and shares a moment of mutual attraction with a U.S. Marshal he has kidnapped.</p>
+          <a href="https://www.imdb.com/title/tt0120780">IMDB</a>
+        </article>
+        <article class="flow " id="tt0482571">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTM3MzQ5MjQ5OF5BMl5BanBnXkFtZTcwMTQ3NzMzMw@@._V1_FMjpg_UX1000_.jpg" alt="The Prestige" />
+          <h3>The Prestige</h3>
+          <p>The Prestige: Directed by Christopher Nolan. With Christian Bale, Hugh Jackman, Scarlett Johansson, Michael Caine. Two friends and fellow magicians become bitter enemies after a sudden tragedy. As they devote themselves to this rivalry, they make sacrifices that bring them fame but, with terrible consequences.</p>
+          <a href="https://www.imdb.com/title/tt0482571">IMDB</a>
+        </article>
+        <article class="flow " id="tt0113161">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjAwODYzNDY4Ml5BMl5BanBnXkFtZTcwODkwNTgzNA@@._V1_FMjpg_UX1000_.jpg" alt="Get Shorty" />
+          <h3>Get Shorty</h3>
+          <p>Get Shorty: Directed by Barry Sonnenfeld. With Gene Hackman, Rene Russo, Danny DeVito, John Travolta. A mobster travels from Florida to Hollywood to collect a debt and discovers that the movie business is just as sleazy as the Miami underworld.</p>
+          <a href="https://www.imdb.com/title/tt0113161">IMDB</a>
+        </article>
+        <article class="flow " id="tt22697176">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMGI2MDJkMjYtYjc3Zi00YjI0LTlhYjQtYTM1YzFlNjQ3NzMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Idina Menzel: Which Way to the Stage?" />
+          <h3>Idina Menzel: Which Way to the Stage?</h3>
+          <p>Idina Menzel: Which Way to the Stage?: Directed by Eric Maldin, Anne McCabe. With Idina Menzel, Josh Groban, Aaron Lohr, Cara Mentzel. Idina Menzel's path to realize a lifelong dream: headlining a concert at Madison Square Garden in her hometown of New York City.</p>
+          <a href="https://www.imdb.com/title/tt22697176">IMDB</a>
+        </article>
+        <article class="flow " id="tt11737520">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNDk5MDFlYjYtZjQ5ZS00ZjhkLWJkYmMtYzhmZjkyOWExY2M3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="One Piece" />
+          <h3>One Piece</h3>
+          <p>One Piece: Created by Steven Maeda, Matt Owens. With Iñaki Godoy, Emily Rudd, Mackenyu, Jacob Romero. With his straw hat and ragtag crew, young pirate Monkey D. Luffy goes on an epic voyage for treasure.</p>
+          <a href="https://www.imdb.com/title/tt11737520">IMDB</a>
+        </article>
+        <article class="flow " id="tt5264838">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNmY4NWMzMjAtZjIzMC00NzgxLWI3OWQtMjZkNzQzYzY3NDJiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Crater" />
+          <h3>Crater</h3>
+          <p>Crater: Directed by Kyle Patrick Alvarez. With Isaiah Russell-Bailey, Mckenna Grace, Billy Barratt, Orson Hong. After the death of his father, a boy growing up on a lunar mining colony takes a trip to explore a legendary crater, along with his four best friends, prior to permanently leaving the Moon and relocated to another planet.</p>
+          <a href="https://www.imdb.com/title/tt5264838">IMDB</a>
+        </article>
+        <article class="flow " id="tt9844938">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZjk4MmI3ZGYtODg4Zi00ZjBkLTg1YWMtY2NiMmIzNDc0ZWJhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Onoda: 10,000 Nights in the Jungle" />
+          <h3>Onoda: 10,000 Nights in the Jungle</h3>
+          <p>Onoda: 10,000 Nights in the Jungle: Directed by Arthur Harari. With Yûya Endô, Kanji Tsuda, Yûya Matsuura, Tetsuya Chiba. When Japan surrenders at the end of World War II, soldier Hiroo Onoda retreats into the jungles of the Philippines to continue the war himself for another 10,000 days.</p>
+          <a href="https://www.imdb.com/title/tt9844938">IMDB</a>
+        </article>
+        <article class="flow " id="tt0106582">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNGJkZmZlYTYtODQ1ZC00N2JiLWIxMWYtZTE4ZDMxZjQyZTAzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Cliffhanger" />
+          <h3>Cliffhanger</h3>
+          <p>Cliffhanger: Directed by Renny Harlin. With Sylvester Stallone, John Lithgow, Michael Rooker, Janine Turner. Two mountain rescuers are forced to guide a group of thieves to their missing loot.</p>
+          <a href="https://www.imdb.com/title/tt0106582">IMDB</a>
+        </article>
+        <article class="flow " id="tt0060474">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNmY5NWY2YTMtMTEyNC00OGI4LThmNzUtN2QwNDM0MTA1N2VjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Don't Look Now... We're Being Shot At!" />
+          <h3>Don't Look Now... We're Being Shot At!</h3>
+          <p>Don't Look Now... We're Being Shot At!: Directed by Gérard Oury. With Bourvil, Louis de Funès, Claudio Brook, Andréa Parisy. Several ordinary Frenchmen go on an epic voyage through the occupied country to the free zone as they help British pilots avoid German captivity.</p>
+          <a href="https://www.imdb.com/title/tt0060474">IMDB</a>
+        </article>
+        <article class="flow " id="tt0100502">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNzFiZDU1ODktYTljOS00YWU3LThiYTYtNWRmMTdhMDg3OGE4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="RoboCop 2" />
+          <h3>RoboCop 2</h3>
+          <p>RoboCop 2: Directed by Irvin Kershner. With Peter Weller, John Glover, Mario Machado, Leeza Gibbons. RoboCop returns to protect the citizens of old Detroit but faces a deadly challenge when a rogue OCP member secretly creates a new, evil RoboCop 2.</p>
+          <a href="https://www.imdb.com/title/tt0100502">IMDB</a>
+        </article>
+        <article class="flow " id="tt0093870">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZWM1YzRhODktZDE1MC00NzBlLTk0NGMtOGNhZDQyMmJiZGFiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="RoboCop" />
+          <h3>RoboCop</h3>
+          <p>RoboCop: Directed by Paul Verhoeven. With Peter Weller, Nancy Allen, Dan O'Herlihy, Ronny Cox. In a violent future in Old Detroit, murdered police officer Alex Murphy is resurrected as RoboCop, a powerful cyborg law enforcer. As he fights crime, he begins to recover memories of his past and seeks revenge on the gang who killed him.</p>
+          <a href="https://www.imdb.com/title/tt0093870">IMDB</a>
+        </article>
+        <article class="flow " id="tt0064505">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNTlmYmFmYWItODE2OC00MGNkLWFiZDUtNzNiZDYzOTVlOGMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Italian Job" />
+          <h3>The Italian Job</h3>
+          <p>The Italian Job: Directed by Peter Collinson. With Michael Caine, Noël Coward, Benny Hill, Raf Vallone. A comic caper movie about a plan to steal a gold shipment from the streets of Turin by creating a traffic jam.</p>
+          <a href="https://www.imdb.com/title/tt0064505">IMDB</a>
+        </article>
+        <article class="flow " id="tt1517268">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYjI3NDU0ZGYtYjA2YS00Y2RlLTgwZDAtYTE2YTM5ZjE1M2JlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Barbie" />
+          <h3>Barbie</h3>
+          <p>Barbie: Directed by Greta Gerwig. With Margot Robbie, Ryan Gosling, Issa Rae, Kate McKinnon. Barbie and Ken are having the time of their lives in the seemingly perfect world of Barbie Land. However, when they get a chance to go to the outside world, they soon discover the joys and perils of living among regular humans.</p>
+          <a href="https://www.imdb.com/title/tt1517268">IMDB</a>
+        </article>
+        <article class="flow " id="tt15398776">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BN2JkMDc5MGQtZjg3YS00NmFiLWIyZmQtZTJmNTM5MjVmYTQ4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Oppenheimer" />
+          <h3>Oppenheimer</h3>
+          <p>Oppenheimer: Directed by Christopher Nolan. With Cillian Murphy, Emily Blunt, Matt Damon, Robert Downey Jr.. A dramatization of the life story of J. Robert Oppenheimer, the physicist who had a large hand in the development of the atomic bombs that brought an end to World War II.</p>
+          <a href="https://www.imdb.com/title/tt15398776">IMDB</a>
+        </article>
+        <article class="flow " id="tt9603212">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BN2U4OTdmM2QtZTkxYy00ZmQyLTg2N2UtMDdmMGJmNDhlZDU1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Mission: Impossible - Dead Reckoning Part One" />
+          <h3>Mission: Impossible - Dead Reckoning Part One</h3>
+          <p>Mission: Impossible - Dead Reckoning Part One: Directed by Christopher McQuarrie. With Tom Cruise, Hayley Atwell, Ving Rhames, Simon Pegg. Ethan Hunt and his IMF team must track down a terrifying new weapon that threatens all of humanity.</p>
+          <a href="https://www.imdb.com/title/tt9603212">IMDB</a>
+        </article>
+        <article class="flow " id="tt0073540">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMmRmNTZmMGMtMjA1Yy00N2Q5LTk0ODAtMmM0YmE1NjEwMGZjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Picnic at Hanging Rock" />
+          <h3>Picnic at Hanging Rock</h3>
+          <p>Picnic at Hanging Rock: Directed by Peter Weir. With Rachel Roberts, Anne-Louise Lambert, Vivean Gray, Helen Morse. During a rural summer picnic, a few students and a teacher from an Australian girls' school vanish without a trace. Their absence frustrates and haunts the people left behind.</p>
+          <a href="https://www.imdb.com/title/tt0073540">IMDB</a>
+        </article>
+        <article class="flow " id="tt6998518">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZGI1NTNhNzctOTk4OC00N2RjLTkwYTgtOGMwMWFjMzM5ZjNiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Mandy" />
+          <h3>Mandy</h3>
+          <p>Mandy: Directed by Panos Cosmatos. With Nicolas Cage, Andrea Riseborough, Linus Roache, Ned Dennehy. The enchanted lives of a couple in a secluded forest are brutally shattered by a nightmarish hippie cult and their demon-biker henchmen, propelling a man into a spiraling, surreal rampage of vengeance.</p>
+          <a href="https://www.imdb.com/title/tt6998518">IMDB</a>
+        </article>
+        <article class="flow " id="tt14688458">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNjA5ODM4YTEtNDcxZi00N2ViLTg0MTgtNGQxNjBjZWY5YTk3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Silo" />
+          <h3>Silo</h3>
+          <p>Silo: Created by Graham Yost. With Rebecca Ferguson, Common, Harriet Walter, Tim Robbins. Men and women live in a giant silo underground with several regulations which they believe are in place to protect them from the toxic and ruined world on the surface.</p>
+          <a href="https://www.imdb.com/title/tt14688458">IMDB</a>
+        </article>
+        <article class="flow " id="tt5433140">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYzEwZjczOTktYzU1OS00YjJlLTgyY2UtNWEzODBlN2RjZDEwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Fast X" />
+          <h3>Fast X</h3>
+          <p>Fast X: Directed by Louis Leterrier. With Vin Diesel, Michelle Rodriguez, Jason Statham, Jordana Brewster. Dom Toretto and his family are targeted by the vengeful son of drug kingpin Hernan Reyes.</p>
+          <a href="https://www.imdb.com/title/tt5433140">IMDB</a>
+        </article>
+        <article class="flow " id="tt8060774">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMmEzY2I3YTEtZDE1My00NGEzLTgzNWItM2UzMGRlZDhmNjBjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="15 Minutes of War" />
+          <h3>15 Minutes of War</h3>
+          <p>15 Minutes of War: Directed by Fred Grivois. With Alban Lenoir, Olga Kurylenko, Sébastien Lalanne, David Murgia. In February 1976 in Djibouti, a school bus was taken hostage at the Somali border. The GIGN is sent on the spot. After 30 hours of tension, a rescue operation is organized.</p>
+          <a href="https://www.imdb.com/title/tt8060774">IMDB</a>
+        </article>
+        <article class="flow " id="tt10366206">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BY2Q2ZmI5ZjUtNWVhMC00YzJkLTlmYjMtY2RmZDhkNzEzYjZhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="John Wick: Chapter 4" />
+          <h3>John Wick: Chapter 4</h3>
+          <p>John Wick: Chapter 4: Directed by Chad Stahelski. With Keanu Reeves, Laurence Fishburne, George Georgiou, Lance Reddick. John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.</p>
+          <a href="https://www.imdb.com/title/tt10366206">IMDB</a>
+        </article>
+        <article class="flow " id="tt8178634">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNWMwODYyMjQtMTczMi00NTQ1LWFkYjItMGJhMWRkY2E3NDAyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="RRR" />
+          <h3>RRR</h3>
+          <p>RRR: Directed by S.S. Rajamouli. With N.T. Rama Rao Jr., Ram Charan, Ajay Devgn, Alia Bhatt. A fearless warrior on a perilous mission comes face to face with a steely cop serving British forces in this epic saga set in pre-independent India.</p>
+          <a href="https://www.imdb.com/title/tt8178634">IMDB</a>
+        </article>
+        <article class="flow " id="tt10298810">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZGI3ZjUyM2ItNmFjYy00NGE3LTg2OTYtMTI2MDk0MjIxNDA1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Lightyear" />
+          <h3>Lightyear</h3>
+          <p>Lightyear: Directed by Angus MacLane. With Chris Evans, Keke Palmer, Peter Sohn, Taika Waititi. While spending years attempting to return home, marooned Space Ranger Buzz Lightyear encounters an army of ruthless robots commanded by Zurg who are attempting to steal the fuel source of his ship.</p>
+          <a href="https://www.imdb.com/title/tt10298810">IMDB</a>
+        </article>
+        <article class="flow " id="tt2906216">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOGRjMjQ0ZDAtODc0OS00MGY1LTkxMTMtODhhNjY5NTM4N2IwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Dungeons & Dragons: Honor Among Thieves" />
+          <h3>Dungeons & Dragons: Honor Among Thieves</h3>
+          <p>Dungeons & Dragons: Honor Among Thieves: Directed by John Francis Daley, Jonathan Goldstein. With Chris Pine, Michelle Rodriguez, Regé-Jean Page, Justice Smith. A charming thief and a band of unlikely adventurers embark on an epic quest to retrieve a lost relic, but things go dangerously awry when they run afoul of the wrong people.</p>
+          <a href="https://www.imdb.com/title/tt2906216">IMDB</a>
+        </article>
+        <article class="flow " id="tt11388580">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYWY3ODNlZjEtZWU4Zi00YzBhLWE3YWMtMmMyMzZkZmYxOTMyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Miss Americana" />
+          <h3>Miss Americana</h3>
+          <p>Miss Americana: Directed by Lana Wilson. With Taylor Swift, Andrea Swift, Scott Swift, Joel Little. A look at iconic pop artist Taylor Swift during a transformational time in her life as she embraces her role as a singer/songwriter and harnesses the full power of her voice.</p>
+          <a href="https://www.imdb.com/title/tt11388580">IMDB</a>
+        </article>
+        <article class="flow " id="tt10285320">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNDVjYjQ2NWItMGI2MC00ZTI5LTk4ZWItMDc3OTA3YzM5NzIzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Lego Masters Australia" />
+          <h3>Lego Masters Australia</h3>
+          <p>Lego Masters Australia: With Hamish Blake, Ryan McNaught, David, Gabby Wyatt. Each week, contestants are set tasks to build items out of LEGO in line with a designated theme and are judged on their results. Contestants are then eliminated from the competition on a knock out basis culminating in a winner.</p>
+          <a href="https://www.imdb.com/title/tt10285320">IMDB</a>
+        </article>
+        <article class="flow " id="tt11041332">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMDAwMDNiNDAtZjM0Yi00OTEyLWFkMGUtMzIxOGU0NWYzYmM4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Yellowjackets" />
+          <h3>Yellowjackets</h3>
+          <p>Yellowjackets: Created by Ashley Lyle, Bart Nickerson. With Melanie Lynskey, Tawny Cypress, Sophie Nélisse, Jasmin Savoy Brown. A wildly talented girls high school soccer team become the unlucky survivors of a plane crash deep in the Canadian wilderness.</p>
+          <a href="https://www.imdb.com/title/tt11041332">IMDB</a>
+        </article>
+        <article class="flow " id="tt1630029">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNWI0Y2NkOWEtMmM2OC00MjQ3LWI1YzItZGQxYzQ3NzI4NWZmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Avatar: The Way of Water" />
+          <h3>Avatar: The Way of Water</h3>
+          <p>Avatar: The Way of Water: Directed by James Cameron. With Sam Worthington, Zoe Saldaña, Sigourney Weaver, Stephen Lang. Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.</p>
+          <a href="https://www.imdb.com/title/tt1630029">IMDB</a>
+        </article>
+        <article class="flow " id="tt10366514">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNWNkNzEyM2QtMmE1ZC00Zjg5LWE2MDUtYWFhNzE5ZTRhZWNlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Eiffel" />
+          <h3>Eiffel</h3>
+          <p>Eiffel: Directed by Martin Bourboulon. With Romain Duris, Emma Mackey, Pierre Deladonchamps, Armande Boulanger. The government is asking Eiffel to design something spectacular for the 1889 Paris World Fair, but Eiffel simply wants to design the subway. Suddenly, everything changes when Eiffel crosses paths with a mysterious woman from Arun's past.</p>
+          <a href="https://www.imdb.com/title/tt10366514">IMDB</a>
+        </article>
+        <article class="flow " id="tt12593682">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BODUyZjkxZDMtZGI3ZC00ZmEwLTgwMTUtYTU4OTQ5YjU4ZjRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Bullet Train" />
+          <h3>Bullet Train</h3>
+          <p>Bullet Train: Directed by David Leitch. With Brad Pitt, Joey King, Aaron Taylor-Johnson, Brian Tyree Henry. Five assassins aboard a swiftly-moving bullet train find out that their missions have something in common.</p>
+          <a href="https://www.imdb.com/title/tt12593682">IMDB</a>
+        </article>
+        <article class="flow " id="tt6856242">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNjY3YTY3MGMtMjVmYS00ZmM3LWIxMDAtYWVhZTAyZDMwNmMwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The King's Man" />
+          <h3>The King's Man</h3>
+          <p>The King's Man: Directed by Matthew Vaughn. With Ralph Fiennes, Gemma Arterton, Rhys Ifans, Djimon Hounsou. In the early years of the 20th century, the Kingsman agency is formed to stand against a cabal plotting a war to wipe out millions of people.</p>
+          <a href="https://www.imdb.com/title/tt6856242">IMDB</a>
+        </article>
+        <article class="flow " id="tt0499549">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMDEzMmQwZjctZWU2My00MWNlLWE0NjItMDJlYTRlNGJiZjcyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Avatar" />
+          <h3>Avatar</h3>
+          <p>Avatar: Directed by James Cameron. With Sam Worthington, Zoe Saldaña, Sigourney Weaver, Stephen Lang. A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.</p>
+          <a href="https://www.imdb.com/title/tt0499549">IMDB</a>
+        </article>
+        <article class="flow " id="tt11291274">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMWEzMTA3MjAtOTkwYS00ZTNlLWIzYzMtMDIxNzU0NTlkMGRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Unbearable Weight of Massive Talent" />
+          <h3>The Unbearable Weight of Massive Talent</h3>
+          <p>The Unbearable Weight of Massive Talent: Directed by Tom Gormican. With Nicolas Cage, Pedro Pascal, Tiffany Haddish, Sharon Horgan. Movie star Nick Cage must channel his iconic screen characters when he finds himself caught in-between a dangerous super-fan and a CIA agent.</p>
+          <a href="https://www.imdb.com/title/tt11291274">IMDB</a>
+        </article>
+        <article class="flow " id="tt12758060">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMDZhY2Y4ZGQtODk4MC00NGQwLWFiMWItNzU2M2Q3Nzk2MmVlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Tetris" />
+          <h3>Tetris</h3>
+          <p>Tetris: Directed by Jon S. Baird. With Taron Egerton, Mara Huf, Miles Barrow, Rick Yune. Video game designer Henk Rogers seeks to secure global rights for Tetris (1984), leading to tense negotiations in the Soviet Union, involving creators, government, and corporate intrigues.</p>
+          <a href="https://www.imdb.com/title/tt12758060">IMDB</a>
+        </article>
+        <article class="flow " id="tt14641788">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZjRjZjZhNzUtMDQyMC00OWZmLWIzMjQtZDM2OWRhNzgwOGU2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Enola Holmes 2" />
+          <h3>Enola Holmes 2</h3>
+          <p>Enola Holmes 2: Directed by Harry Bradbeer. With Millie Bobby Brown, Henry Cavill, David Thewlis, Louis Partridge. Now a detective-for-hire, Enola Holmes takes on her first official case to find a missing girl as the sparks of a dangerous conspiracy ignite a mystery that requires the help of friends - and Sherlock himself - to unravel.</p>
+          <a href="https://www.imdb.com/title/tt14641788">IMDB</a>
+        </article>
+        <article class="flow " id="tt6146586">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYjdlNWFlZjEtM2U0NS00ZWU5LTk1M2EtZmQxNWFiZjk0MGM5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="John Wick: Chapter 3 - Parabellum" />
+          <h3>John Wick: Chapter 3 - Parabellum</h3>
+          <p>John Wick: Chapter 3 - Parabellum: Directed by Chad Stahelski. With Keanu Reeves, Halle Berry, Ian McShane, Laurence Fishburne. John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
+          <a href="https://www.imdb.com/title/tt6146586">IMDB</a>
+        </article>
+        <article class="flow " id="tt4425200">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMjE2NDkxNTY2M15BMl5BanBnXkFtZTgwMDc2NzE0MTI@._V1_FMjpg_UX1000_.jpg" alt="John Wick: Chapter 2" />
+          <h3>John Wick: Chapter 2</h3>
+          <p>John Wick: Chapter 2: Directed by Chad Stahelski. With Keanu Reeves, Riccardo Scamarcio, Ian McShane, Ruby Rose. After returning to the criminal underworld to repay a debt, John Wick discovers that a large bounty has been put on his life.</p>
+          <a href="https://www.imdb.com/title/tt4425200">IMDB</a>
+        </article>
+        <article class="flow " id="tt2911666">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_FMjpg_UX1000_.jpg" alt="John Wick" />
+          <h3>John Wick</h3>
+          <p>John Wick: Directed by Chad Stahelski. With Keanu Reeves, Michael Nyqvist, Alfie Allen, Willem Dafoe. John Wick is a former hitman grieving the loss of his true love. When his home is broken into, robbed, and his dog killed, he is forced to return to action to exact revenge.</p>
+          <a href="https://www.imdb.com/title/tt2911666">IMDB</a>
+        </article>
+        <article class="flow " id="tt16867040">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOGEwMjNlZTYtNWRkNi00MTc0LWJlZWUtNjMyOWU3N2ZiMzZjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Cunk on Earth" />
+          <h3>Cunk on Earth</h3>
+          <p>Cunk on Earth: With Diane Morgan, Jim Al-Khalili, Shirley J. Thompson, Douglas Hedley. Follows Philomena Cunk as she comically tells the story of our greatest inventions and asks experts hard-hitting questions about humanity's progress.</p>
+          <a href="https://www.imdb.com/title/tt16867040">IMDB</a>
+        </article>
+        <article class="flow " id="tt15715052">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOTRjMjAzOTctMmY0Yi00OGM4LWI0NmQtNjExODMzODhjY2ZhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="History of the World: Part II" />
+          <h3>History of the World: Part II</h3>
+          <p>History of the World: Part II: With Mel Brooks, Ike Barinholtz, Nick Kroll, Wanda Sykes. Sketches depicting key moments from prehistoric times through modern day, showing human civilization's major developments and cultural shifts across different regions and eras.</p>
+          <a href="https://www.imdb.com/title/tt15715052">IMDB</a>
+        </article>
+        <article class="flow " id="tt0082517">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMDk3Zjc4MWYtNjVjYS00NTBjLTg4NmUtNzA4ODRjYzEyMDgzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="History of the World: Part I" />
+          <h3>History of the World: Part I</h3>
+          <p>History of the World: Part I: Directed by Mel Brooks. With Mel Brooks, Gregory Hines, Dom DeLuise, Madeline Kahn. Mel Brooks brings his one-of-a-kind comic touch to the history of mankind covering events from the Old Testament to the French Revolution in a series of episodic comedy vignettes.</p>
+          <a href="https://www.imdb.com/title/tt0082517">IMDB</a>
+        </article>
+        <article class="flow " id="tt7554866">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOThiYWI0YzgtOTI3Yy00ZDc1LTg2OGYtY2YwZjRjNGYwMGEyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Men in Kilts: A Roadtrip with Sam and Graham" />
+          <h3>Men in Kilts: A Roadtrip with Sam and Graham</h3>
+          <p>Men in Kilts: A Roadtrip with Sam and Graham: With Sam Heughan, Graham McTavish, Gary Lewis, Chick Allan. Sam Heughan and Graham McTavish take viewers on a road-trip, discovering the rich and complex heritage of their native Scotland.</p>
+          <a href="https://www.imdb.com/title/tt7554866">IMDB</a>
+        </article>
+        <article class="flow " id="tt10456740">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BY2M0MDA2MDAtYTUyNC00NGFlLTllYTEtMDE3NTlkMWM4ZTQ0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Lost Bullet" />
+          <h3>Lost Bullet</h3>
+          <p>Lost Bullet: Directed by Guillaume Pierret. With Alban Lenoir, Nicolas Duvauchelle, Ramzy Bedia, Stéfi Celma. A small time delinquent, turned police mechanic for a go fast task force, is forced to defend his innocence when his mentor is killed by dirty cops.</p>
+          <a href="https://www.imdb.com/title/tt10456740">IMDB</a>
+        </article>
+        <article class="flow " id="tt11866324">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMWVjYTBlYjktODhjZS00OTUyLTg4MzctODI4MTkyNDE5YzY0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Prey" />
+          <h3>Prey</h3>
+          <p>Prey: Directed by Dan Trachtenberg. With Amber Midthunder, Dakota Beavers, Dane DiLiegro, Stormee Kipp. Naru, a skilled warrior of the Comanche Nation, fights to protect her tribe against one of the first highly-evolved Predators to land on Earth.</p>
+          <a href="https://www.imdb.com/title/tt11866324">IMDB</a>
+        </article>
+        <article class="flow " id="tt9114286">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYWY5NDY1ZjItZDQxMy00MTAzLTgyOGQtNTQxYjFiMzZjMjUyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Black Panther: Wakanda Forever" />
+          <h3>Black Panther: Wakanda Forever</h3>
+          <p>Black Panther: Wakanda Forever: Directed by Ryan Coogler. With Letitia Wright, Lupita Nyong'o, Danai Gurira, Winston Duke. The people of Wakanda fight to protect their home from intervening world powers as they mourn the death of King T'Challa.</p>
+          <a href="https://www.imdb.com/title/tt9114286">IMDB</a>
+        </article>
+        <article class="flow " id="tt3581920">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BYWI3ODJlMzktY2U5NC00ZjdlLWE1MGItNWQxZDk3NWNjN2RhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Last of Us" />
+          <h3>The Last of Us</h3>
+          <p>The Last of Us: Created by Neil Druckmann, Craig Mazin. With Bella Ramsey, Pedro Pascal, Gabriel Luna, Isabela Merced. After a global pandemic destroys civilization, a hardened survivor takes charge of a 14-year-old girl who may be humanity's last hope.</p>
+          <a href="https://www.imdb.com/title/tt3581920">IMDB</a>
+        </article>
+        <article class="flow " id="tt14531842">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BNDczOThkZDctZTgzMC00NmM2LWJhMzYtOTAxYTJkNzdjYTRkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Extraordinary" />
+          <h3>Extraordinary</h3>
+          <p>Extraordinary: Created by Emma Moran. With Máiréad Tyers, Sofia Oxenham, Bilal Hasna, Luke Rollason. Jen is a self-aware young woman who lives in a world where everybody except her has a superpower.</p>
+          <a href="https://www.imdb.com/title/tt14531842">IMDB</a>
+        </article>
+        <article class="flow " id="tt11813216">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOTkzMWI4OTEtMTk0MS00MTUxLWI4NTYtYmRiNWM4Zjc1MGRhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Banshees of Inisherin" />
+          <h3>The Banshees of Inisherin</h3>
+          <p>The Banshees of Inisherin: Directed by Martin McDonagh. With Colin Farrell, Brendan Gleeson, Kerry Condon, Pat Shortt. Two lifelong friends find themselves at an impasse when one abruptly ends their relationship, with alarming consequences for both of them.</p>
+          <a href="https://www.imdb.com/title/tt11813216">IMDB</a>
+        </article>
+        <article class="flow " id="tt1745960">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMDBkZDNjMWEtOTdmMi00NmExLTg5MmMtNTFlYTJlNWY5YTdmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Top Gun: Maverick" />
+          <h3>Top Gun: Maverick</h3>
+          <p>Top Gun: Maverick: Directed by Joseph Kosinski. With Tom Cruise, Jennifer Connelly, Miles Teller, Val Kilmer. The story involves Maverick confronting his past while training a group of younger Top Gun graduates, including the son of his deceased best friend, for a dangerous mission.</p>
+          <a href="https://www.imdb.com/title/tt1745960">IMDB</a>
+        </article>
+        <article class="flow " id="tt0099810">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMmNhYWJmN2EtZDYwNC00NzE0LWE5N2UtZTUyMDM4YjZmYWE3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Hunt for Red October" />
+          <h3>The Hunt for Red October</h3>
+          <p>The Hunt for Red October: Directed by John McTiernan. With Sean Connery, Alec Baldwin, Scott Glenn, Sam Neill. Moscow, Washington D.C. and a CIA Analyst track a rogue Soviet Captain and his new submarine.</p>
+          <a href="https://www.imdb.com/title/tt0099810">IMDB</a>
+        </article>
+        <article class="flow " id="tt10332508">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BOTc0NTUyYmItOTY4Yi00ZjY5LWI1NjMtNDgyODJhYWRiY2UxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Primal" />
+          <h3>Primal</h3>
+          <p>Primal: Created by Genndy Tartakovsky. With Aaron LaPlante, Laëtitia Eïdo, Fred Tatasciore, Imari Williams. A caveman and a dinosaur bond over unfortunate tragedies and become each other's only hope of survival in a treacherous world.</p>
+          <a href="https://www.imdb.com/title/tt10332508">IMDB</a>
+        </article>
+        <article class="flow " id="tt16358384">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BZWQ2ZmFjM2UtZDI3My00ZWJiLWFlZTQtOWI4OGFiMmMzNWZiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Tulsa King" />
+          <h3>Tulsa King</h3>
+          <p>Tulsa King: Created by Taylor Sheridan. With Sylvester Stallone, Andrea Savage, Martin Starr, Jay Will. After being released from prison after 25 years, New York Mafia capo Dwight "The General" Manfredi is exiled to Tulsa, Oklahoma.</p>
+          <a href="https://www.imdb.com/title/tt16358384">IMDB</a>
+        </article>
+        <article class="flow " id="tt13443470">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMDE1NjNmZjgtZTg0OC00NjkxLWEzYzItMDNkMTc3YjgxZWQyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Wednesday" />
+          <h3>Wednesday</h3>
+          <p>Wednesday: Created by Alfred Gough, Miles Millar. With Jenna Ortega, Emma Myers, Hunter Doohan, Joy Sunday. Follows Wednesday Addams' years as a student, when she attempts to master her emerging psychic ability, thwart a killing spree, and solve the mystery that embroiled her parents.</p>
+          <a href="https://www.imdb.com/title/tt13443470">IMDB</a>
+        </article>
+        <article class="flow " id="tt11564570">
+          <img loading="lazy" src="https://m.media-amazon.com/images/M/MV5BMzI2ZDYxZTEtMzVlOC00OTUyLTgyNTAtYWFhNmRhZjAzZWE1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Glass Onion" />
+          <h3>Glass Onion</h3>
+          <p>Glass Onion: Directed by Rian Johnson. With Daniel Craig, Edward Norton, Kate Hudson, Janelle Monáe. Tech billionaire Miles Bron invites his friends for a getaway on his private Greek island. When someone turns up dead, Detective Benoit Blanc is put on the case.</p>
+          <a href="https://www.imdb.com/title/tt11564570">IMDB</a>
+        </article>
+      </div>
+    </section>
+</main>
+</body>
+</html>
